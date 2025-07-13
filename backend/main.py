@@ -15,8 +15,8 @@ app.add_middleware(
 print("Loading PDF context...")
 pdf_context = load_pdf_context("Accessible_Travel_Guide_Partial.pdf")
 
-
 app.state.pdf_context = pdf_context
+
 
 app.include_router(chat_router)
 
