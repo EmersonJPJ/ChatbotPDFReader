@@ -1,0 +1,30 @@
+
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  width: 100%;           /* Ocupa todo el ancho posible dentro de .app */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  background: white;
+}
+
+
+.chat-history {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  background: #fefefe;
+  scroll-behavior: smooth;
+  width: 100%;  /* Ocupa todo el ancho disponible */
+  box-sizing: border-box;
+}
+
+
+.typing-indicator {
+  font-style: italic;
+  color: #999;
+  margin-top: 8px;
+}
