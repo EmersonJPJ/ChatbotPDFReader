@@ -15,6 +15,7 @@ function App() {
     setMessages(prev => [...prev, userMessage]);
     setLoading(true);
 
+
     try {
       const response = await fetch('http://127.0.0.1:8000/chat', {
         method: 'POST',
@@ -28,28 +29,32 @@ function App() {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
+      // Initialize EventSource for streaming response
       setMessages(prev => [...prev, { role: 'assistant', content: '' }]);
 
       const reader = response.body.getReader();
       const decoder = new TextDecoder();
 
+
       while (true) {
         const { done, value } = await reader.read();
         if (done) break;
 
+        // Decode the chunk and process each line
         const chunk = decoder.decode(value);
         const lines = chunk.split('\n');
 
+        // Process each line of the SSE response
         for (const line of lines) {
           if (line.startsWith('data: ')) {
             try {
               const data = JSON.parse(line.slice(6));
-
+              // Handle different types of SSE messages
               if (data.type === 'content') {
                 setMessages(prev => {
                   const updated = [...prev];
                   const last = updated[updated.length - 1];
-
+                  
                   if (!last.content.endsWith(data.content)) {
                     last.content += data.content;
                   }
@@ -88,13 +93,36 @@ function App() {
     setLoading(false);
   };
 
+  const exportConversation = () => {
+  if (messages.length === 0) return;
+  // Create a markdown file with the conversation
+  const content = messages
+    .map((msg) => {
+      const prefix = msg.role === 'user' ? '👤 Usuario:' : '🤖 Asistente:';
+      return `${prefix}\n${msg.content}\n`;
+    })
+    .join('\n');
+
+  const blob = new Blob([content], { type: 'text/markdown;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'conversacion.md';
+  a.click();
+
+  URL.revokeObjectURL(url);
+  };
+
+
   return (
     <div className="app">
       <h1>PDF ChatBot</h1>
       <ChatBox messages={messages} loading={loading} />
       <InputBar 
         onSend={handleSend} 
-        onClear={handleClear} 
+        onClear={handleClear}
+        onExport={exportConversation} 
         loading={loading} 
       />
     </div>

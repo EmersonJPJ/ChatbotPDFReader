@@ -10,7 +10,7 @@ def load_pdf_context(pdf_path: str) -> str:
             raise FileNotFoundError(f"PDF file not found: {pdf_path}")
         
         text_content = []
-
+        # Open the PDF file and extract text from each page
         with pdfplumber.open(pdf_path) as pdf:
             for page_num, page in enumerate(pdf.pages, 1):
                 text = page.extract_text()

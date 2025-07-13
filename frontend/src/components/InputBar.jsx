@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './InputBar.css';
 
-const InputBar = ({ onSend, onClear, loading }) => {
+const InputBar = ({ onSend, onClear, loading, onExport}) => {
   const [input, setInput] = useState('');
 
   const handleSubmit = (e) => {
@@ -23,6 +23,8 @@ const InputBar = ({ onSend, onClear, loading }) => {
       />
       <button type="submit" disabled={loading}>Send</button>
       <button type="button" onClick={onClear}>Clear</button>
+      <button className="export" onClick={onExport} disabled={loading}>Export conversation</button>
+
     </form>
   );
 };

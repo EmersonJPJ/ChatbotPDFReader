@@ -14,13 +14,7 @@ app.add_middleware(
 
 print("Loading PDF context...")
 pdf_context = load_pdf_context("Accessible_Travel_Guide_Partial.pdf")
-print(f"PDF context loaded: {len(pdf_context)} characters")
 
-if pdf_context and not pdf_context.startswith("Error"):
-    print("PDF preview:")
-    print(pdf_context[:300] + "..." if len(pdf_context) > 300 else pdf_context)
-else:
-    print("Error loading PDF or no content found")
 
 app.state.pdf_context = pdf_context
 
