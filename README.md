@@ -1,8 +1,8 @@
-# PDF ChatBot 🤖📄
+# PDF ChatBot 
 
 A full-stack AI-powered chatbot application that enables users to have intelligent conversations about the content of a PDF document. Built with React frontend and FastAPI backend, featuring real-time streaming responses and comprehensive conversation management.
 
-## 🚀 Features
+## Features
 
 ### Core Functionality
 - **PDF Document Analysis**: Upload and analyze PDF documents for context-aware responses
@@ -22,7 +22,7 @@ A full-stack AI-powered chatbot application that enables users to have intellige
 - **Error Handling**: Comprehensive error management throughout the application
 - **CORS Support**: Proper cross-origin resource sharing configuration
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Backend
 - **FastAPI**: Modern Python web framework for APIs
@@ -35,13 +35,13 @@ A full-stack AI-powered chatbot application that enables users to have intellige
 - **Fetch API**: HTTP client for backend communication
 - **CSS3**: Custom styling for responsive design
 
-## 📋 Prerequisites
+## Prerequisites
 
 - Python 3.8+
 - Node.js 14+
 - OpenAI API Key
 
-## 🔧 Installation & Setup
+## Installation & Setup
 
 ### Backend Setup
 
@@ -98,7 +98,7 @@ npm start
 ```
 Frontend will be available at `http://localhost:3000`
 
-## 🏗️ Architecture & Workflow
+## Architecture & Workflow
 
 ### System Architecture
 ```
@@ -137,7 +137,7 @@ Frontend will be available at `http://localhost:3000`
    - Final response state updated
    - User can continue conversation or export
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 ChatBotPDFReader/
@@ -164,7 +164,7 @@ ChatBotPDFReader/
 ```
 
 
-## 🎯 API Endpoints
+## API Endpoints
 
 ### `POST /chat`
 Handles chat requests with streaming responses.
@@ -193,7 +193,7 @@ Health check endpoint.
 }
 ```
 
-## 🎨 UI Components
+## UI Components
 
 ### ChatBox Component
 - Displays conversation history
@@ -213,7 +213,7 @@ Health check endpoint.
 - Content formatting
 - Responsive design
 
-## 📊 Performance Features
+## Performance Features
 
 ### Rate Limiting
 - **5 requests per minute** per IP address
@@ -233,7 +233,7 @@ Health check endpoint.
 - **Graceful degradation** on failures
 - **Connection recovery** mechanisms
 
-## 🚦 Usage Examples
+## Usage Examples
 
 ### Basic Query
 ```
@@ -250,7 +250,7 @@ AI: "Según el documento, los puntos principales incluyen..."
 ### Export Feature
 Users can export conversations as Markdown files with formatted timestamps and role indicators.
 
-## 🔐 Security Considerations
+## Security Considerations
 
 - **API Key Protection**: Environment variables for sensitive data
 - **Rate Limiting**: Prevents abuse and excessive API usage
@@ -258,7 +258,7 @@ Users can export conversations as Markdown files with formatted timestamps and r
 - **CORS Configuration**: Controlled cross-origin access
 - **Error Sanitization**: Prevents information leakage
 
-## 🚀 Future Enhancements
+## Future Enhancements
 
 - **Multiple PDF Support**: Handle multiple documents simultaneously
 - **User Authentication**: Add user accounts and session management
@@ -267,16 +267,16 @@ Users can export conversations as Markdown files with formatted timestamps and r
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are always welcome! If you have suggestions, improvements, or bug fixes, feel free to open an issue or create a pull request.
 
 ---
 
 
-## ✨ Contact  
+## Contact  
 
 Feel free to reach out for any questions or suggestions!  
 
-- 📧 **Email**: emerson04vade@gmail.com  
-- 💻 **GitHub**: EmersonJPJ
+- **Email**: emerson04vade@gmail.com  
+- **GitHub**: EmersonJPJ
